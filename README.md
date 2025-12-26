@@ -220,3 +220,6 @@ Average slack (days)                      2.50            1.80
 
 This shows that risk-aware scheduling improved on-time rate by 13 percentage points and reduced total lateness by 570 minutes, at the cost of slightly more task splits (due to earlier scheduling of risky tasks).
 
+## License
+This project is released under the MIT License. See the LICENSE file for details.
+Provided for research, educational, and demonstration purposes, without warranty of any kind.
