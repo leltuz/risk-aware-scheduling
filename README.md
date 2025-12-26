@@ -1,5 +1,22 @@
 # Risk-Aware Task Scheduling Engine
 
+## TL;DR
+A deterministic, risk-aware task scheduling system that explicitly accounts for estimation uncertainty by prioritizing tasks using historical overrun risk, slack, dependencies, and effort—rather than relying solely on deadlines.
+
+**Why it matters:**
+- Demonstrates scheduling under uncertainty, not idealized estimates
+- Makes risk explicit and observable through transparent scoring
+- Enables offline, reproducible comparison between baseline and risk-aware policies
+- Focuses on policy design and trade-offs, not optimization or learning
+
+## How to Read this README
+This README is written as a scheduling policy and evaluation document, not a workflow tool or production scheduler guide.
+- **For the motivation and failure mode:** Start with _Problem Statement_ and _Why Naive Deadline Scheduling Fails_ to understand why deadline-first scheduling breaks down under estimation uncertainty.
+- **For the core system design:** Read _Architecture Overview_ and _Risk Score Components_ to understand how tasks are modeled, how risk is quantified, and how policies influence scheduling decisions.
+- **For evaluation and evidence:** Focus on _Evaluation Methodology_ and _Example Output_ to see how the risk-aware policy is compared against the baseline and what metrics are used to judge improvement.
+- **For design intent and constraints:** Read _Limitations and Extensions_ to understand what the system intentionally does not do (learning, rescheduling, calendar integration) and why.
+- **For implementation details:** Sections on _Usage_ and _Project Structure_ are secondary and included for completeness rather than as the main contribution.
+
 ## Problem Statement
 
 Traditional task scheduling systems prioritize tasks by deadline and priority, ignoring the inherent uncertainty in effort estimation. When tasks consistently overrun their estimates, deadline-driven scheduling leads to cascading failures: tasks scheduled late in the sequence miss their deadlines, creating stress days with over-capacity allocation, and poor overall on-time completion rates.
